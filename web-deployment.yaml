@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cna-web
+spec:
+  selector:
+    matchLabels:
+      app: cna-web
+  template:
+    metadata:
+      labels:
+        app: cna-web
+    spec:
+      containers:
+      - image: ncaregistry01.azurecr.io/webimage
+        name: webimage
+        ports:
+        - containerPort: 80
+        

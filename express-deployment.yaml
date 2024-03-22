@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cna-express
+spec:
+  selector:
+    matchLabels:
+      app: cna-express
+  template:
+    metadata:
+      labels:
+        app: cna-express
+    spec:
+      containers:
+        - image: ncaregistry01.azurecr.io/expressimage
+          name: expressimage
+          ports:
+            - containerPort: 80
